@@ -5,8 +5,7 @@ import {
   deleteContact,
   patchContact,
 } from './operationsContact.js';
-
-import { logOut } from '../auth/operations';
+import { logOutOperation } from './../auth/operationsAuth.js';
 
 const handlePending = state => {
   state.loading = true;
@@ -76,7 +75,7 @@ const contactsSlice = createSlice({
         state.editing[id] = false;
       })
       .addCase(patchContact.rejected, handleRejected)
-      .addCase(logOut.fulfilled, state => {
+      .addCase(logOutOperation.fulfilled, state => {
         state.items = [];
         state.error = false;
         state.loading = false;
