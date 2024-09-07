@@ -1,33 +1,123 @@
-import { Field, Form, Formik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useId } from 'react';
+import * as Yup from 'yup';
+import toast from 'react-hot-toast';
+import { RiUser3Fill } from 'react-icons/ri';
+import { MdEmail } from 'react-icons/md';
+import { PiLockKeyFill } from 'react-icons/pi';
+import { registerOperation } from '../../store/auth/operationsAuth.js';
+import css from '../RegisterForm/RegisterForm.module.css';
 
-const RegisterForm = ({ submit }) => {
-  const nameId = useId();
-  const emailId = useId();
-  const passwordId = useId();
+const UserSchema = Yup.object({
+  name: Yup.string()
+    .required('Required name')
+    .min(3, 'Too Short!')
+    .max(50, 'Too Long!'),
+  email: Yup.string().email('Invalid email address').required('Required email'),
+  password: Yup.string()
+    .min(6, 'Password must contain at least 6 symbols!')
+    .required('Required password'),
+});
 
-  const handleSubmit = (values, actions) => {
-    submit(values);
+export default function RegisterForm() {
+  const dispatch = useDispatch();
+  const fieldId = useId();
+
+  const handleRegisterContact = (values, actions) => {
+    dispatch(registerOperation(values))
+      .unwrap()
+      .then(() => {
+        toast.success('Account created successfully');
+        actions.resetForm();
+      })
+      .catch(() => {
+        toast.error('Problem with the registration process');
+      });
     actions.resetForm();
   };
+
   return (
-    <Formik
-      initialValues={{ name: '', email: '', password: '' }}
-      onSubmit={handleSubmit}
-    >
-      <Form>
-        <label htmlFor={nameId}>Name: </label>
-        <Field name="name" id={nameId} />
-        <br />
-        <label htmlFor={emailId}>Email: </label>
-        <Field name="email" id={emailId} />
-        <br />
-        <label htmlFor={passwordId}>Password: </label>
-        <Field name="password" type="password" id={passwordId} />
-        <hr />
-        <button type="submit">Register</button>
-      </Form>
-    </Formik>
+    <div className={css.container}>
+      <div className={css.containerForm}>
+        <Formik
+          initialValues={{ name: '', email: '', password: '' }}
+          validationSchema={UserSchema}
+          onSubmit={handleRegisterContact}
+        >
+          <Form className={css.form}>
+            <div className={css.fields}>
+              <label className={css.label} htmlFor={`${fieldId} - name`}>
+                Name
+              </label>
+              <div className={css.positionIcon}>
+                <Field
+                  className={css.input}
+                  type="text"
+                  name="name"
+                  id={`${fieldId} - name`}
+                />
+                <span className={css.iconInp}>
+                  <RiUser3Fill />
+                </span>
+              </div>
+              <ErrorMessage
+                name="name"
+                component="span"
+                className={css.error}
+              />
+            </div>
+
+            <div className={css.fields}>
+              <label className={css.label} htmlFor={`${fieldId} - email`}>
+                Email
+              </label>
+              <div className={css.positionIcon}>
+                <Field
+                  className={css.input}
+                  type="email"
+                  name="email"
+                  id={`${fieldId} - email`}
+                />
+                <span className={css.iconInp}>
+                  <MdEmail />
+                </span>
+              </div>
+              <ErrorMessage
+                name="email"
+                component="span"
+                className={css.error}
+              />
+            </div>
+
+            <div className={css.fields}>
+              <label className={css.label} htmlFor={`${fieldId} - password`}>
+                Password
+              </label>
+              <div className={css.positionIcon}>
+                <Field
+                  className={css.input}
+                  type="password"
+                  name="password"
+                  id={`${fieldId} - password`}
+                />
+                <span className={css.iconInp}>
+                  <PiLockKeyFill />
+                </span>
+              </div>
+              <ErrorMessage
+                name="password"
+                component="span"
+                className={css.error}
+              />
+            </div>
+
+            <button className={css.btn} type="submit">
+              Register
+            </button>
+          </Form>
+        </Formik>
+      </div>
+    </div>
   );
-};
-export default RegisterForm;
+}

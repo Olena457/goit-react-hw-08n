@@ -1,27 +1,101 @@
-import { Field, Form, Formik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 import { useId } from 'react';
+import { MdEmail } from 'react-icons/md';
+import { PiLockKeyFill } from 'react-icons/pi';
 
-const LoginForm = ({ submit }) => {
-  const passwordId = useId();
-  const emailId = useId();
+import toast from 'react-hot-toast';
+import css from '../LoginForm/LoginForm.module.css';
+import { loginOperation } from '../../store/auth/operationsAuth.js';
+
+const UserSchema = Yup.object().shape({
+  email: Yup.string()
+    .email('Invalid email address')
+    .required('Email is required'),
+  password: Yup.string()
+    .min(6, 'Password is too short!')
+    .max(20, 'Password is too long!')
+    .required('Password is required'),
+});
+
+export default function LoginForm() {
+  const dispatch = useDispatch();
+  const fieldId = useId();
 
   const handleSubmit = (values, actions) => {
-    submit(values);
+    dispatch(loginOperation(values))
+      .unwrap()
+      .then(() => {
+        toast.success('Login successful!');
+      })
+      .catch(() => {
+        toast.error('Problem with the registration process');
+      });
     actions.resetForm();
   };
   return (
-    <Formik initialValues={{ password: '', email: '' }} onSubmit={handleSubmit}>
-      <Form>
-        <label htmlFor={emailId}>Email: </label>
-        <Field name="email" id={emailId} />
-        <br />
-        <label htmlFor={passwordId}>Password: </label>
-        <Field name="password" id={passwordId} type="password" />
-        <hr />
-        <button type="submit">Login</button>
-      </Form>
-    </Formik>
-  );
-};
+    <div className={css.container}>
+      <div className={css.containerForm}>
+        <Formik
+          initialValues={{
+            email: '',
+            password: '',
+          }}
+          validationSchema={UserSchema}
+          onSubmit={handleSubmit}
+        >
+          <Form className={css.form}>
+            <div className={css.fields}>
+              <label className={css.label} htmlFor={`${fieldId}-email`}>
+                Email
+              </label>
+              <div className={css.positionIcon}>
+                <Field
+                  className={css.input}
+                  type="email"
+                  name="email"
+                  id={`${fieldId}-email`}
+                />
+                <span className={css.iconInp}>
+                  <MdEmail />
+                </span>
+              </div>
+              <ErrorMessage
+                name="email"
+                component="div"
+                className={css.error}
+              />
+            </div>
 
-export default LoginForm;
+            <div className={css.fields}>
+              <label className={css.label} htmlFor={`${fieldId}-password`}>
+                Password
+              </label>
+              <div className={css.positionIcon}>
+                <Field
+                  className={css.input}
+                  type="password"
+                  name="password"
+                  id={`${fieldId}-password`}
+                />
+                <span className={css.iconInp}>
+                  <PiLockKeyFill />
+                </span>
+              </div>
+              <ErrorMessage
+                name="password"
+                component="div"
+                className={css.error}
+              />
+            </div>
+
+            <button className={css.btn} type="submit">
+              Log In
+            </button>
+          </Form>
+        </Formik>
+      </div>
+    </div>
+  );
+}

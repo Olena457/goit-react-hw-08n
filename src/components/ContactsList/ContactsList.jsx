@@ -1,19 +1,7 @@
-// const ContactsList = ({ tasks }) => {
-//   return (
-//     <ul>
-//       {tasks.map(el => (
-//         <li key={el.id}>{el.text}</li>
-//       ))}
-//     </ul>
-//   );
-// };
-
-// export default ContactsList;
-import css from './ContacstList.module.css';
-import Loading from './../Loading/Loading.jsx';
-import Contact from './../Contact/Contact.jsx';
 import { useSelector } from 'react-redux';
-
+import css from './ContacstList.module.css';
+import Contact from './../Contact/Contact.jsx';
+import Loading from './../Loading/Loading';
 import {
   selectError,
   selectFilteredContacts,
@@ -27,7 +15,7 @@ function ContactsList() {
 
   return (
     <ul className={css.list}>
-      {loading && <Loading />}
+      {Loading && <Loading />}
       {!loading &&
         contacts &&
         !error &&

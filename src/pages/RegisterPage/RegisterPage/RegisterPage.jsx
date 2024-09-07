@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 
-import RegisterForm from '../../components/RegisterForm/RegisterForm.jsx';
-import { registerOperation } from '../../store/auth/operationsAuth.js';
+import RegisterForm from '../../../components/RegisterForm/RegisterForm.jsx';
+import { registerOperation } from '../../../store/auth/operationsAuth.js';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();

@@ -20,26 +20,29 @@
 
 // export default UserInfo;
 import { useDispatch, useSelector } from 'react-redux';
-import css from './UserInfo.module.css';
+import avatar from './avatar.png';
 import { logOutOperation } from '../../store/auth/operationsAuth.js';
 import { selectUser } from '../../store/auth/selectorsAuth.js';
+import { Avatar, Button, Toolbar } from '@mui/material';
+import { FaSignOutAlt } from 'react-icons/fa';
 
 export default function UserInfo() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   return (
-    <div className={css.wrapper}>
-      <h2 className={css.userName}>
-        Welcome,{user.name}.Im your personal phonebook!
-      </h2>
-      <button
+    <Toolbar sx={{ display: 'flex', columnGap: 2, fontSize: 18 }}>
+      <Avatar alt={user.name} src={avatar} sx={{ width: 36, height: 36 }} />
+      Welcome, {user.name}!
+      <Button
+        variant="text"
+        color="inherit"
         type="button"
-        className={css.btn}
+        startIcon={<FaSignOutAlt />}
         onClick={() => dispatch(logOutOperation())}
       >
-        Logout
-      </button>
-    </div>
+        Log Out
+      </Button>
+    </Toolbar>
   );
 }

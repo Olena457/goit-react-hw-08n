@@ -19,7 +19,7 @@
   padding: 20px;
   margin-bottom: 24px;
   width: calc((100% - 2 * 8px) / 3);
-  border: px solid green;
+  border: px solid #61a8eb;
   box-shadow: -10px 0 10px -10px rgba(0, 0, 0, 0.5),
     10px 0 10px -10px rgba(0, 0, 0, 0.5), 0 10px 10px -10px rgba(0, 0, 0, 0.5);
 }

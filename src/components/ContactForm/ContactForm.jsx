@@ -7,9 +7,6 @@ import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { createContactOperation } from '../../store/contacts/operationsContact.js';
 
-// import { styled } from '@emotion/styled';
-import styled from '@emotion/styled';
-
 const validationSchema = Yup.object().shape({
   name: Yup.string()
     .required('Required')
@@ -21,71 +18,76 @@ const validationSchema = Yup.object().shape({
     .max(50, 'Too Long!'),
 });
 
-const IconWrapper = styled('span')({
-  position: 'absolute',
-  left: '10px',
-  top: '50%',
-  transform: 'translateY(-50%)',
-});
-
 function ContactForm() {
   const dispatch = useDispatch();
   return (
-    <Container maxWidth="sm">
-      <Formik
-        initialValues={{ name: '', number: '' }}
-        validationSchema={validationSchema}
-        onSubmit={(values, actions) => {
-          alert(JSON.stringify(values, null, 2));
-          dispatch(createContactOperation(values));
-          actions.setSubmitting(false);
-          actions.resetForm();
-        }}
-      >
-        {({ errors, touched }) => (
-          <Form>
-            <Typography variant="h4" component="h3" gutterBottom>
-              Add contacts
-            </Typography>
-            <Box mb={2} position="relative">
-              <IconWrapper>
-                <FaUserTie />
-              </IconWrapper>
-              <Field
-                as={TextField}
-                name="name"
-                label="Name"
-                fullWidth
-                error={touched.name && Boolean(errors.name)}
-                helperText={<ErrorMessage name="name" />}
-                InputProps={{
-                  startAdornment: <FaUserTie />,
-                }}
-              />
-            </Box>
-            <Box mb={2} position="relative">
-              <IconWrapper>
-                <FaMobileRetro />
-              </IconWrapper>
-              <Field
-                as={TextField}
-                name="number"
-                label="Number"
-                fullWidth
-                error={touched.number && Boolean(errors.number)}
-                helperText={<ErrorMessage name="number" />}
-                InputProps={{
-                  startAdornment: <FaMobileRetro />,
-                }}
-              />
-            </Box>
-            <Button type="submit" variant="contained" color="primary" fullWidth>
-              Add contact
-            </Button>
-          </Form>
-        )}
-      </Formik>
-    </Container>
+    <>
+      <div className={css.container}>
+        <div className={css.containerForm}>
+          <Formik
+            initialValues={{ name: '', number: '' }}
+            validationSchema={validationSchema}
+            onSubmit={(values, actions) => {
+              alert(JSON.stringify(values, null, 2));
+              dispatch(createContactOperation(values));
+              actions.setSubmitting(false);
+              actions.resetForm();
+            }}
+          >
+            <Form className={css.form}>
+              <h3 className={css.title}>Add contacts</h3>
+              <div className={css.fields}>
+                <label className={css.label} htmlFor="name">
+                  Name
+                </label>
+                <div className={css.positionIcon}>
+                  <Field
+                    className={css.input}
+                    type="text"
+                    name="name"
+                    id="name"
+                  />
+                  <span className={css.iconInp}>
+                    <FaUserTie />
+                  </span>
+                </div>
+                <ErrorMessage
+                  className={css.error}
+                  name="name"
+                  component="span"
+                />
+              </div>
+              <div className={css.fields}>
+                <label className={css.label} htmlFor="number">
+                  Number
+                </label>
+                <div className={css.positionIcon}>
+                  <Field
+                    className={css.input}
+                    type="text"
+                    name="number"
+                    id="number"
+                  />
+                  <span className={css.iconInp}>
+                    <FaMobileRetro />
+                  </span>
+                </div>
+                <ErrorMessage
+                  className={css.error}
+                  name="number"
+                  component="div"
+                />
+              </div>
+
+              <button className={css.btn} type="submit">
+                Add contact
+              </button>
+              <SearchBox />
+            </Form>
+          </Formik>
+        </div>
+      </div>
+    </>
   );
 }
 

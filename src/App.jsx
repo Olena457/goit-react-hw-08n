@@ -2,17 +2,18 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import AppBar from './components/AppBar/AppBar.jsx';
+import AppB from './components/AppB/AppB.jsx';
 
 // import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import PublicRoute from './components/PublicRoute/PublicRoute.jsx';
 
-import HomePage from './pages/HomePage/HomePage.jsx';
-import ContactsPage from './pages/ContactsPage/ContactsPage.jsx';
-import LoginPage from './pages/LoginPage/LoginPage.jsx';
-import RegisterPage from './pages/RegisterPage/RegisterPage.jsx';
-import NotFoundPage from './pages/NotfoundPage/NotFoundPage.jsx';
 import { currentOperation } from './store/auth/operationsAuth.js';
+import LoginPage from './pages/LoginPage/LoginPage.jsx';
+
+import ContactsPage from './pages/ContactsPage/ContactsPage.jsx';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage.jsx';
+import HomePage from './pages/HomePage/HomePage.jsx';
+import RegisterPage from './pages/RegisterPage/RegisterPage/RegisterPage.jsx';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const App = () => {
 
   return (
     <>
-      <AppBar />
+      <AppB />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route element={<PublicRoute />}>
