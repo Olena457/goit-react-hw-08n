@@ -1,16 +1,18 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectAuth } from '../../store/auth/selectorsAuth.js';
+import Navigation from '../Navigation/Navigation.jsx';
+import Loading from './../Loading/Loading.jsx';
 
 const PublicRoute = () => {
   const { isLoggedIn, token } = useSelector(selectAuth);
 
   if (!isLoggedIn && token) {
-    return <p>...loading</p>;
+    return <Loading />;
   }
 
   if (isLoggedIn && token) {
-    return <Navigate to="/contacts" />;
+    return <Navigation to="/contacts" />;
   }
   return <Outlet />;
 };

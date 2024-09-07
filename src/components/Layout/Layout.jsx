@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { AppBar } from '../AppBar/AppBar';
+import AppB from '../AppB/AppB.jsx';
 import css from './Layout.module.css';
 
 function Layout({ children }) {
   return (
     <div className={css.container}>
-      <AppBar />
+      <AppB />
       <Suspense fallback={null}>{children}</Suspense>
       <Outlet />
     </div>

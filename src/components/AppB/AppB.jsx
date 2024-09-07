@@ -5,6 +5,7 @@ import UserInfo from '../UserInfo/UserInfo.jsx';
 import Authorization from '../Authorization/Authorization.jsx';
 import css from './AppB.module.css';
 
+import { FcTwoSmartphones } from 'react-icons/fc';
 export const AppB = () => {
   const { isLoggedIn } = useSelector(selectLoggedIn);
 
@@ -12,7 +13,9 @@ export const AppB = () => {
     <>
       <header className={css.header}>
         <>
-          <h2 className={css.title}>PhoneBook</h2>
+          <h2 className={css.title}>
+            PhoneBook <FcTwoSmartphones />
+          </h2>
         </>
         <Navigation />
         {isLoggedIn ? <UserInfo /> : <Authorization />}
