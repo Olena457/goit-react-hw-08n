@@ -2,18 +2,22 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import AppB from './components/AppB/AppB.jsx';
-
-// import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import PublicRoute from './components/PublicRoute/PublicRoute.jsx';
-
 import { currentOperation } from './store/auth/operationsAuth.js';
-import LoginPage from './pages/LoginPage/LoginPage.jsx';
+import Layout from './components/Layout/Layout.jsx';
 
-import ContactsPage from './pages/ContactsPage/ContactsPage.jsx';
-import NotFoundPage from './pages/NotFoundPage/NotFoundPage.jsx';
-import HomePage from './pages/HomePage/HomePage.jsx';
-import RegisterPage from './pages/RegisterPage/RegisterPage/RegisterPage.jsx';
+const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage.jsx'));
+const ContactsPage = lazy(() =>
+  import('./pages/ContactsPage/ContactsPage.jsx')
+);
+const NotFoundPage = lazy(() =>
+  import('./pages/NotFoundPage/NotFoundPage.jsx')
+);
+const HomePage = lazy(() => import('./pages/HomePage/HomePage.jsx'));
+const RegisterPage = lazy(() =>
+  import('./pages/RegisterPage/RegisterPage.jsx')
+);
 
 const App = () => {
   const dispatch = useDispatch();
@@ -24,18 +28,19 @@ const App = () => {
 
   return (
     <>
-      <AppB />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route element={<PublicRoute />}>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-        </Route>
-        {/* <Route element={<PrivateRoute />}> */}
-        <Route path="/contacts" element={<ContactsPage />} />
-        {/* </Route> */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route element={<PublicRoute />}>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Route>
+          <Route element={<PrivateRoute />}>
+            <Route path="/contacts" element={<ContactsPage />} />
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Layout>
     </>
   );
 };

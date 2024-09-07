@@ -1,7 +1,8 @@
 import { useDispatch } from 'react-redux';
 
-import RegisterForm from '../../../components/RegisterForm/RegisterForm.jsx';
-import { registerOperation } from '../../../store/auth/operationsAuth.js';
+import css from './RegisterPage.module.css';
+import RegisterForm from './../../components/RegisterForm/RegisterForm.jsx';
+import { registerOperation } from './../../store/auth/operationsAuth.js';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
@@ -10,11 +11,10 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <br />
+    <>
+      <h2 className={css.title}>Register</h2>
       <RegisterForm submit={register} />
-    </div>
+    </>
   );
 };
 

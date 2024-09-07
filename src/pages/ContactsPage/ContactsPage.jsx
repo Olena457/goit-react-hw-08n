@@ -4,7 +4,7 @@ import ContactForm from '../../components/ContactForm/ContactForm.jsx';
 import Loading from './../../components/Loading/Loading.jsx';
 import { selectLoading } from '../../store/contacts/selectorsContacts.js';
 import { getAllContactsOperation } from './../../store/contacts/operationsContact.js';
-
+import css from './ContactsPage.module.css';
 export default function ContactsPage() {
   const dispatch = useDispatch();
 
@@ -16,7 +16,7 @@ export default function ContactsPage() {
 
   return (
     <div>
-      <h3>Your Contacts</h3>
+      <h3 className={css.title}>Your contacts</h3>
       <ContactForm />
       {isLoading ? <Loading /> : <ContactsList contact={contact} />}
     </div>
