@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { rootReducer } from './rootReducer.js';
+import rootReducer from './rootReducer.js'; // Імпортуємо без фігурних дужок
 import {
   persistStore,
   FLUSH,
@@ -10,8 +10,9 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: rootReducer,
+
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
@@ -20,4 +21,6 @@ export const store = configureStore({
     }),
 });
 
-export const persistor = persistStore(store);
+const persistor = persistStore(store);
+
+export { store, persistor };

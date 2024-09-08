@@ -1,7 +1,7 @@
-.container {
+/* .container {
   display: flex;
   align-items: center;
-  /* gap: 30px; */
+  
   text-decoration: none;
 }
 
@@ -42,4 +42,4 @@
   height: 2px;
   background-color: red;
   transition: width 0.5s;
-}
+} */

@@ -13,8 +13,8 @@ const UserInfo = () => {
   };
 
   return (
-    <div className={css.wrapper}>
-      <h2 className={css.userName}>
+    <div className={css.container}>
+      <h2 className={css.title}>
         Welcome, {user.name}. I am
         <FcOnlineSupport /> your personal phonebook!
       </h2>

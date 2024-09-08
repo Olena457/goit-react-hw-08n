@@ -8,13 +8,9 @@ export default function Authorization() {
   }
   return (
     <>
-      <div className={css.conteiner}>
-        <NavLink className={activeLink} to="/register">
-          Register
-        </NavLink>
-        <NavLink className={activeLink} to="/login">
-          Log In
-        </NavLink>
+      <div className={css.container}>
+        <NavLink className={activeLink} to="/register" />
+        <NavLink className={activeLink} to="/login" />
       </div>
     </>
   );

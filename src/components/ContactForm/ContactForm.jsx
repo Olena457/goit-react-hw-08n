@@ -1,11 +1,12 @@
 import React from 'react';
+import css from './ContactForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { TextField, Button, Container, Typography, Box } from '@mui/material';
 import { FaUserTie } from 'react-icons/fa';
 import { FaMobileRetro } from 'react-icons/fa6';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { createContactOperation } from '../../store/contacts/operationsContact.js';
+import SearchBox from '../SearchBox/SearchBox.jsx';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -35,7 +36,6 @@ function ContactForm() {
             }}
           >
             <Form className={css.form}>
-              <h3 className={css.title}>Add contacts</h3>
               <div className={css.fields}>
                 <label className={css.label} htmlFor="name">
                   Name

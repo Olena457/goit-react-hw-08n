@@ -1,0 +1,48 @@
+.label {
+  display: block;
+  margin-bottom: 4px;
+  margin-top: 30px;
+  font-size: 17px;
+  font-weight: 300;
+  color: white;
+}
+.title {
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+  color: white;
+  font: 1.5em Georgia, serif;
+}
+.positionIcon {
+  position: relative;
+}
+.input {
+  margin: 0 auto;
+  width: 400px;
+  padding: 10px 40px 10px 20px;
+  margin-bottom: 8px;
+  outline: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 15px;
+  border: 2px solid #6a6969;
+  background-color: rgba(255, 255, 255, 0.932);
+  box-shadow: 0 10px 10px -10px rgba(128, 128, 128, 0.5);
+}
+.iconInp {
+  position: absolute;
+  right: 14px;
+  top: 70%;
+  transform: translateY(-100%);
+  fill: #0b0b0f;
+}
+
+.toast {
+  font-size: 16px;
+  padding: 16px;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+}

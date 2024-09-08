@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import css from './ContacstList.module.css';
+import css from './ContactsList.module.css';
 import Contact from './../Contact/Contact.jsx';
 import Loading from './../Loading/Loading';
 import {
@@ -15,7 +15,10 @@ function ContactsList() {
 
   return (
     <ul className={css.list}>
-      {Loading && <Loading />}
+      {loading && <Loading />}
+      {!loading && !error && contacts.length === 0 && (
+        <div>No contacts available. Please add some contacts.</div>
+      )}
       {!loading &&
         contacts &&
         !error &&
@@ -24,8 +27,9 @@ function ContactsList() {
             <Contact id={id} number={number} name={name} />
           </li>
         ))}
-      {error && <div>`Error:{error}`</div>}
+      {error && <div>Error: {error}</div>}
     </ul>
   );
 }
+
 export default ContactsList;
