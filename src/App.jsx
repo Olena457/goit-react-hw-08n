@@ -16,9 +16,9 @@ const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage.jsx'));
 const ContactsPage = lazy(() =>
   import('./pages/ContactsPage/ContactsPage.jsx')
 );
-const NotFoundPage = lazy(() =>
-  import('./pages/NotFoundPage/NotFoundPage.jsx')
-);
+// const NotFoundPage = lazy(() =>
+//   import('./pages/NotFoundPage/NotFoundPage.jsx')
+// );
 
 const App = () => {
   const dispatch = useDispatch();
@@ -45,7 +45,7 @@ const App = () => {
             <Route path="/contacts" element={<ContactsPage />} />
           </Route>
 
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<div>404</div>} />
         </Routes>
         <ToastNotification />
       </Layout>
