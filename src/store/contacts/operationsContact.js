@@ -1,29 +1,3 @@
-// import { createAsyncThunk } from '@reduxjs/toolkit';
-// import axios from 'axios';
-
-// export const createContactOperation = createAsyncThunk(
-//   'contacts/create',
-//   async (contact, { rejectWithValue }) => {
-//     try {
-//       const { data } = await axios.post('/contacts', contact);
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
-
-// export const getAllContactsOperation = createAsyncThunk(
-//   'contact/getAll',
-//   async (_, { rejectWithValue }) => {
-//     try {
-//       const { data } = await axios('/contacts');
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 

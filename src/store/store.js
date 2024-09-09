@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './rootReducer.js'; // Імпортуємо без фігурних дужок
+import rootReducer from './rootReducer.js';
 import {
   persistStore,
   FLUSH,

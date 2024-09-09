@@ -1,32 +1,11 @@
-/* .wrapper {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 600px;
-  margin: 0 auto;
-  padding: 0;
-  /* background-image: url('../../assets/wave-compres.jpg'); */
-/* background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  place-items: center;
-  width: 100%;
-  min-height: 100vh;
-}  */
-
 .container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.title {
-  margin-left: 20px;
-  margin-top: 100px;
-
-  width: 100%;
+.titleLogin {
+  margin-bottom: 200px;
   font-size: 66px;
-
   text-align: center;
   color: #f24e5e;
   text-shadow: 1px 1px 0 #000000, 2px 2px 0 #777777, 3px 3px 0 #666666,
@@ -43,7 +22,7 @@
 }
 .btn {
   display: flex;
-  margin-top: 50px;
+  margin-bottom: 150px;
   width: 100px;
   height: 40px;
   margin-left: auto;

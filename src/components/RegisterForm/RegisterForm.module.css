@@ -24,14 +24,7 @@
   font-weight: 500;
   color: black;
 }
-/* .title {
-  font-size: 20px;
-  text-align: center;
-  color: black;
-  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
-  color: white;
-  font: 1.5em Georgia, serif;
-} */
+
 .positionIcon {
   position: relative;
 }
@@ -79,8 +72,6 @@
   background-color: #61a8eb;
   color: #333333;
   border: 2px solid #141010;
-  /* background-color: rgba(255, 0, 0, 0.872);
-  border-color: rgb(255, 47, 0); */
 }
 
 .error {

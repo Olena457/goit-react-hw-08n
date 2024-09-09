@@ -32,7 +32,7 @@ a:hover {
 body {
   margin: 0;
   background: linear-gradient(to right, #61a8eb, #bfdbfe);
-  /* background-color: #61a8eb; */
+
   min-width: 320px;
   min-height: 100vh;
 }

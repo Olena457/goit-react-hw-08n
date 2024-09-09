@@ -96,7 +96,7 @@ export const AppB = () => {
       <div className={css.header}>
         <h2 className={css.title}>
           PhoneBook
-          <FcTwoSmartphones className={css.styleIcon} />
+          <FcTwoSmartphones style={{ marginLeft: '10px' }} />
         </h2>
         <Navigation isLoggedIn={isLoggedIn} />
       </div>

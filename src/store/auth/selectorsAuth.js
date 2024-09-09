@@ -8,4 +8,4 @@ export const selectLoading = state => state.auth.loading;
 
 export const selectError = state => state.auth.error;
 
-export const selectIsRefreshing = state => state.auth.isRefreshing; //додала рефреш
+export const selectIsRefreshing = state => state.auth.isRefreshing;

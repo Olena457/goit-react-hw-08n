@@ -23,14 +23,7 @@
   font-weight: 300;
   color: black;
 }
-/* .title {
-  font-size: 16px;
-  text-align: center;
-  color: black;
-  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
-  color: white;
-  font: 1.5em Georgia, serif;
-} */
+
 .positionIcon {
   position: relative;
 }

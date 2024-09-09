@@ -1,36 +1,24 @@
-/* min-height: calc(100vh - 50px); */
-/* align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0; */
-
 .container {
   display: flex;
   flex-wrap: wrap;
-  body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    font-style: normal;
-    min-height: 100vh;
-    background-image: url('../../../src/assets/pixabay-314726.jpg');
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    place-items: center;
-    width: 100%;
-    min-height: 100vh;
-  }
+  margin: 0;
+  display: flex;
+  place-items: center;
+  font-style: normal;
+  min-height: 100vh;
+  background-image: url('../../../src/assets/pixabay-314726.jpg');
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
 }
 
-.title {
-  margin-left: 20px;
-  margin-top: 100px;
-
+.titleRegistr {
   width: 100%;
   font-size: 66px;
-
   text-align: center;
   color: #f24e5e;
   text-shadow: 1px 1px 0 #000000, 2px 2px 0 #777777, 3px 3px 0 #666666,
@@ -39,15 +27,14 @@
 }
 
 .subTitle {
-  margin-left: 250px;
-  margin-top: 50px;
+  text-align: center;
   width: 100%;
   font-size: 30px;
   color: #2c3e50;
 }
 .btn {
   display: flex;
-  margin-top: 50px;
+  margin-bottom: 250px;
   width: 100px;
   height: 40px;
   margin-left: auto;
