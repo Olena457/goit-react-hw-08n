@@ -7,6 +7,21 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+  body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    font-style: normal;
+    min-height: 100vh;
+    background-image: url('../../../src/assets/pixabay-314726.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    place-items: center;
+    width: 100%;
+    min-height: 100vh;
+  }
 }
 
 .title {

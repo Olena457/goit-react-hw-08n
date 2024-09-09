@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { logOutOperation } from './../../store/auth/operationsAuth.js';
 import { selectUser } from './../../store/auth/selectorsAuth.js';
-import { FcOnlineSupport } from 'react-icons/fc';
 import css from './UserInfo.module.css';
 
 const UserInfo = () => {
@@ -15,8 +14,7 @@ const UserInfo = () => {
   return (
     <div className={css.container}>
       <h2 className={css.title}>
-        Welcome, {user.name}. I am
-        <FcOnlineSupport /> your personal phonebook!
+        Welcome, {user.name}. I am your personal phone book!
       </h2>
       <button type="button" className={css.btn} onClick={handleLogOut}>
         Logout

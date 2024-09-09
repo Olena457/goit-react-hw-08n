@@ -17,7 +17,9 @@ function ContactsList() {
     <ul className={css.list}>
       {loading && <Loading />}
       {!loading && !error && contacts.length === 0 && (
-        <div>No contacts available. Please add some contacts.</div>
+        <h4 className={css.subTitle}>
+          No contacts available. Please add some contacts.
+        </h4>
       )}
       {!loading &&
         contacts &&

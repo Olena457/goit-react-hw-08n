@@ -31,14 +31,10 @@ import { getAllContactsOperation } from './../../store/contacts/operationsContac
 import ContactsList from './../../components/ContactsList/ContactsList.jsx';
 import Loading from './../../components/Loading/Loading.jsx';
 import css from './ContactsPage.module.css';
-import {
-  selectLoading,
-  // selectContacts,
-} from '../../store/contacts/selectorsContacts.js';
+import { selectLoading } from '../../store/contacts/selectorsContacts.js';
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
-
   const isLoading = useSelector(selectLoading);
 
   useEffect(() => {
