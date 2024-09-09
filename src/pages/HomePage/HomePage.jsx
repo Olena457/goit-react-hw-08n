@@ -14,7 +14,7 @@ export default function HomePage() {
       {!isLogged ? (
         <div className={css.container}>
           <h1 className={css.titleRegistr}>
-            "Welcome to the Phonebook <FcReading />"
+            Welcome to the Phonebook <FcReading />
           </h1>
           <h3 className={css.subTitle}>
             “To begin, please create an account 🚀”

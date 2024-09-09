@@ -1,22 +1,15 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
+/* .container {
   margin: 0;
   display: flex;
   place-items: center;
   font-style: normal;
   min-height: 100vh;
-  background-image: url('../../../src/assets/pixabay-314726.jpg');
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  place-items: center;
   width: 100%;
   min-height: 100vh;
-}
+} */
 
 .titleRegistr {
+  margin-top: 100px;
   width: 100%;
   font-size: 66px;
   text-align: center;
@@ -27,6 +20,7 @@
 }
 
 .subTitle {
+  margin-top: 50px;
   text-align: center;
   width: 100%;
   font-size: 30px;
@@ -34,7 +28,7 @@
 }
 .btn {
   display: flex;
-  margin-bottom: 250px;
+  margin-top: 100px;
   width: 100px;
   height: 40px;
   margin-left: auto;
