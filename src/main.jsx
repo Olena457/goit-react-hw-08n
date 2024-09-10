@@ -1,6 +1,8 @@
 import React from 'react';
 // import 'modern-normalize';
 import './index.css';
+// import Modal from 'react-modal'; // Додайте цей рядок
+// Modal.setAppElement('#root'); // Додайте цей рядок
 import App from './App.jsx';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';

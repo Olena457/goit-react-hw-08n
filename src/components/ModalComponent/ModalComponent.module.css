@@ -1,11 +1,98 @@
-.modalCustom {
-  background-color: rgba(0, 0, 0, 0.8);
+/* .modalContent {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 60%; 
+  max-width: 800px; 
+  padding: 20px; 
 }
 
-.modalHeaderCustom {
-  border-bottom: 2px solid red;
+.modalFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-.modalBodyCustom {
-  color: blue;
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnSecondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btnSecondary:hover {
+  background-color: #5a6268;
+}
+
+.btnDanger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btnDanger:hover {
+  background-color: #c82333;
+} */
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 60%; /* Збільшуємо ширину модального вікна */
+  max-width: 500px; /* Максимальна ширина */
+  padding: 20px; /* Додаємо відступи */
+  background-color: white; /* Додаємо фон */
+  border-radius: 10px; /* Додаємо закруглення кутів */
+}
+
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.85);
+  /* background-color: gray; */
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnSecondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btnSecondary:hover {
+  background-color: #5a6268;
+}
+
+.btnDanger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btnDanger:hover {
+  background-color: #c82333;
+}
+.question {
+  color: aqua;
+}
+.title {
+  color: #dc3545;
 }

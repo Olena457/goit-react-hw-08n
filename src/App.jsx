@@ -16,7 +16,6 @@ const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage.jsx'));
 const ContactsPage = lazy(() =>
   import('./pages/ContactsPage/ContactsPage.jsx')
 );
-
 const App = () => {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);

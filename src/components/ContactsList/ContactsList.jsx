@@ -8,7 +8,7 @@ import {
   selectLoading,
 } from '../../store/contacts/selectorsContacts.js';
 
-function ContactsList() {
+function ContactsList({ onDelete }) {
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const contacts = useSelector(selectFilteredContacts);
@@ -26,7 +26,7 @@ function ContactsList() {
         !error &&
         contacts.map(({ number, name, id }) => (
           <li className={css.item} key={id}>
-            <Contact id={id} number={number} name={name} />
+            <Contact id={id} number={number} name={name} onDelete={onDelete} />
           </li>
         ))}
       {error && <div>Error: {error}</div>}
