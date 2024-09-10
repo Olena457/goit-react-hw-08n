@@ -1,0 +1,11 @@
+.modalCustom {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modalHeaderCustom {
+  border-bottom: 2px solid red;
+}
+
+.modalBodyCustom {
+  color: blue;
+}
