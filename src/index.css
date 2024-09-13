@@ -90,6 +90,7 @@ li {
 
 input {
   font-size: 18px;
+  width: 100%;
 }
 img {
   display: block;
