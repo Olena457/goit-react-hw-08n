@@ -1,8 +1,6 @@
 import React from 'react';
 
 import './index.css';
-// import Modal from 'react-modal'; // Додайти цей рядок
-// Modal.setAppElement('#root'); // Додайти цей рядок
 import App from './App.jsx';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';

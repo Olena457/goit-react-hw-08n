@@ -31,8 +31,11 @@ a:hover {
 }
 body {
   margin: 0;
-  background: linear-gradient(to right, #61a8eb, #bfdbfe);
-
+  background: linear-gradient(to right, #61a8eb, #bfdbfe),
+    url('../public/pixabay-314726.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-width: 320px;
   min-height: 100vh;
 }
